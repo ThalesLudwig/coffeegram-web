@@ -17,8 +17,9 @@ section#post-list #no-posts img {
     margin-bottom: 15px;
 }
 
-section#post-list #no-posts h2 {
+section#post-list #no-posts p {
     margin-bottom: 10px;
+    font-size: 18px;
 }
 
 section#post-list article {

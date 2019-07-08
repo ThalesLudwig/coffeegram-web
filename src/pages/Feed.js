@@ -30,6 +30,12 @@ class Feed extends Component {
         socket.on('post', newPost => {
             this.setState({ feed: [newPost, ...this.state.feed] })
         })
+        socket.on('like', likedPost => {
+            this.setState({ 
+                feed: this.state.feed.map(post => 
+                    post._id === likedPost._id ? likedPost : post)
+            })
+        })
     }
 
     render() {
@@ -68,9 +74,9 @@ class Feed extends Component {
             return (
                 <section id="post-list">
                     <div id="no-posts">
-                        <img src={beans} alt="beans" width="125px" height="125px" />
-                        <h2>No coffee yet. :(</h2>
-                        <h2>Try adding something!</h2>
+                        <img src={beans} alt="beans" height="80px" />
+                        <p>No coffee yet. :(</p>
+                        <p>Try adding something!</p>
                     </div>
                 </section>
             )
