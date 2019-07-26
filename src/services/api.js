@@ -1,7 +1,8 @@
 import axios from 'axios'
+import hostPath from '../env'
 
 const api = axios.create({
-    baseURL: 'http://localhost:3333'
+    baseURL: hostPath
 })
 
 export default api

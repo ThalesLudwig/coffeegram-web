@@ -8,10 +8,7 @@ Tools used:
 - Axios
 - Socket.io
 
-The app is ready to consume data from the "Coffeegram Server" repository on port 3333:
-```
-https://localhost:3333/
-```
+The app is ready to consume data from the "Coffeegram Server" repository. Just insert your host address into src/env.js file.
 
 ## Project setup
 ```

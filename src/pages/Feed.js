@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import api from '../services/api'
 import io from 'socket.io-client'
-
+import hostPath from '../env'
 import './Feed.css'
 import more from '../assets/more.svg'
 import like from '../assets/like.svg'
@@ -26,7 +26,7 @@ class Feed extends Component {
     }
 
     registerToSocket = () => {
-        const socket = io('http://localhost:3333')
+        const socket = io(hostPath)
         socket.on('post', newPost => {
             this.setState({ feed: [newPost, ...this.state.feed] })
         })
@@ -51,7 +51,7 @@ class Feed extends Component {
                                 </div>
                                 <img src={more} alt="more" width="25px" height="25px"></img>
                             </header>
-                            <img src={`http://localhost:3333/files/${post.image}`} alt=""/>
+                            <img src={`${hostPath}/files/${post.image}`} alt=""/>
                             <footer>
                                 <div className="actions">
                                     <button type="button" onClick={() => this.handleLike(post._id)}>
